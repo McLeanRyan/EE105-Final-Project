@@ -19,6 +19,8 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <vl53l4cd_class.h>
+#include <TMC2209.h>
+#include <SoftwareSerial.h>
 
 // Pin definitions
 #define STEP_PIN        PA0
@@ -33,31 +35,45 @@ uint16_t distance_mm = 0;
 uint8_t range_status = 0;
 VL53L4CD_Result_t results;
 
-double kP = 1;
-double kI = 0;
-double kD = 0;
+TMC2209 stepper;
+SoftwareSerial TMCSerial(PA10, PA9);  // RX, TX
 
-double target = 100; //REPLACE 100 WITH MIDPOINT
+double kP = 0.0015;   // 50% of original
+double kI = 0.0000001;   // 25% of original  
+double kD = 0;   // 50% of original
+
+double target = 90; //REPLACE 100 WITH MIDPOINT
 double totalError, previousError, changeError, PIDOut = 0;
+
+unsigned int lastTime = 0;
 
 /**
  * Arduino setup function
  */
 void setup() {
   // Initialize serial for debugging
-  Serial.begin(115200);
+  // Serial.begin(115200);
+  // delay(1000);
+  // Serial.println("\n\n=== STM32 VL53L4CD Test ===");
+  
+  TMCSerial.begin(115200);
   delay(1000);
-  Serial.println("\n\n=== STM32 VL53L4CD Test ===");
+  stepper.setup(TMCSerial);
+  stepper.setRunCurrent(100);
+  // stepper.enableAutomaticCurrentScaling();
+  // stepper.enableAutomaticGradientAdaptation();
+  stepper.enableCoolStep();
+  stepper.enable();
 
   // Initialize GPIO pins for TMC2209
-  pinMode(STEP_PIN, OUTPUT);
-  pinMode(DIR_PIN, OUTPUT);
-  pinMode(ENABLE_PIN, OUTPUT);
+  // pinMode(STEP_PIN, OUTPUT);
+  // pinMode(DIR_PIN, OUTPUT);
+  // pinMode(ENABLE_PIN, OUTPUT);
 
-  // Set initial states
-  digitalWrite(STEP_PIN, LOW);
-  digitalWrite(DIR_PIN, HIGH);     // Clockwise
-  digitalWrite(ENABLE_PIN, LOW);   // ENABLE the driver first (active low)
+  // // Set initial states
+  // digitalWrite(STEP_PIN, LOW);
+  // digitalWrite(DIR_PIN, HIGH);     // Clockwise
+  // digitalWrite(ENABLE_PIN, LOW);   // ENABLE the driver first (active low)
 
   delay(100);  // Give driver time to wake up
 
@@ -65,14 +81,14 @@ void setup() {
   Wire.begin();
   Wire.setClock(400000);  // 400kHz I2C
 
-  Serial.println("Initializing VL53L4CD...");
+  // Serial.println("Initializing VL53L4CD...");
 
   // Initialize sensor
   sensor.VL53L4CD_Off();
-  Serial.println("off");
+  // Serial.println("off");
 
   sensor.begin();
-  Serial.println("begin");
+  // Serial.println("begin");
 
   sensor.InitSensor();
 
@@ -84,13 +100,13 @@ void setup() {
   //   }
   // }
 
-  Serial.println("Sensor initialized successfully");
+  // Serial.println("Sensor initialized successfully");
 
   // Set timing budget and inter-measurement period
   // Timing budget: 20-200ms (time for one measurement)
   // Inter-measurement: 0ms for continuous mode
-  sensor.VL53L4CD_SetRangeTiming(200, 0);  // 50ms timing, continuous
-  Serial.println("Set Timing");
+  sensor.VL53L4CD_SetRangeTiming(20, 0); 
+  // Serial.println("Set Timing");
 
   sensor.VL53L4CD_StartRanging();
 
@@ -102,8 +118,8 @@ void setup() {
   //   }
   // }
 
-  Serial.println("Ranging started");
-  Serial.println("System ready!\n");
+  // Serial.println("Ranging started");
+  // Serial.println("System ready!\n");
 
   // Enable stepper driver
   digitalWrite(ENABLE_PIN, LOW);  // Enable (active low)
@@ -132,69 +148,37 @@ void loop() {
     range_status = results.range_status;
 
     // Print results
-    Serial.print("Distance: ");
-    Serial.print(distance_mm);
-    Serial.print(" mm, Status: ");
-    Serial.print(range_status);
-    Serial.print(", Signal: ");
-    Serial.print(results.signal_per_spad_kcps / 2048.0);
-    Serial.print(" kcps, Ambient: ");
-    Serial.print(results.ambient_per_spad_kcps / 2048.0);
-    Serial.println(" kcps");
+    // Serial.print("Distance: ");
+    // Serial.print(distance_mm);
+    // Serial.print(" mm, Status: ");
+    // Serial.print(range_status);
+    // Serial.print(", Signal: ");
+    // Serial.print(results.signal_per_spad_kcps / 2048.0);
+    // Serial.print(" kcps, Ambient: ");
+    // Serial.print(results.ambient_per_spad_kcps / 2048.0);
+    // Serial.println(" kcps");
 
-    // // Control stepper motor based on distance
-    // // Only respond to valid measurements (status 0)
-    // if (range_status == 0) {
-    //   // Set direction based on distance
-    //   if (distance_mm < 150) {
-    //     digitalWrite(DIR_PIN, LOW);  // Counter-clockwise
-    //   } else {
-    //     digitalWrite(DIR_PIN, HIGH); // Clockwise
-    //   }
-    // }
+    unsigned long now = millis();
+    double dt = (now - lastTime) / 1000.0;  // Convert to seconds
+    
+    if (dt <= 0) return;  // Guard against zero/negative dt
+
+    double e = target - distance_mm;
+    totalError += (e * dt);
+    changeError = (e - previousError) / dt;
+    PIDOut = (kP * e) + (kI * totalError) + (kD * changeError);
+    
+    if (PIDOut > 0) {
+      stepper.disableInverseMotorDirection();
+      stepper.moveAtVelocity(20000*abs(PIDOut));
+    }else if (PIDOut < 0){
+      stepper.enableInverseMotorDirection();
+      stepper.moveAtVelocity(20000*abs(PIDOut));
+    } else {
+      stepper.moveAtVelocity(0);
+    }
+
+    previousError = e;
+    lastTime = now;
   }
-  
-
-  double e = target - distance_mm;
-  totalError += e;
-  changeError = e - previousError;
-  PIDOut = (kP * e) + (kI * totalError) + (kD * changeError);
-  
-  if (e > 0) {
-    digitalWrite(DIR_PIN, HIGH);
-    digitalWrite(STEP_PIN, HIGH);
-    delay(1/abs(PIDOut));
-    digitalWrite(STEP_PIN, LOW);
-  }else if (e < 0){
-    digitalWrite(DIR_PIN, LOW);
-    digitalWrite(STEP_PIN, HIGH);
-    delay(1/abs(PIDOut));
-    digitalWrite(STEP_PIN, LOW);
-  }
-  previousError = e;
-
-  // // Generate continuous steps based on last valid distance reading
-  // // This runs independently of sensor data updates for smooth motion
-  // if (distance_mm < 100) {
-  //   // Close - slow speed (50 steps/sec = 20ms per step)
-  //   digitalWrite(STEP_PIN, HIGH);
-  //   delayMicroseconds(5000);  // 5ms pulse width (very conservative)
-  //   digitalWrite(STEP_PIN, LOW);
-  //   delay(15);  // 15ms delay = ~50 steps/sec
-  // } else if (distance_mm < 300) {
-  //   // Medium distance - medium speed (100 steps/sec = 10ms per step)
-  //   digitalWrite(STEP_PIN, HIGH);
-  //   delayMicroseconds(5000);  // 5ms pulse width
-  //   digitalWrite(STEP_PIN, LOW);
-  //   delay(5);  // 5ms delay = ~100 steps/sec
-  // } else if (distance_mm < 500) {
-  //   // Far - fast speed (200 steps/sec = 5ms per step)
-  //   digitalWrite(STEP_PIN, HIGH);
-  //   delayMicroseconds(3000);  // 3ms pulse width
-  //   digitalWrite(STEP_PIN, LOW);
-  //   delay(2);  // 2ms delay = ~200 steps/sec
-  // } else {
-  //   // Very far or no object - no steps
-  //   delay(10);
-  // }
 }
