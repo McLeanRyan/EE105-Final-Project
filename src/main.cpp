@@ -38,11 +38,15 @@ VL53L4CD_Result_t results;
 TMC2209 stepper;
 SoftwareSerial TMCSerial(PA10, PA9);  // RX, TX
 
-double kP = 0.0015;   // 50% of original
-double kI = 0.0000001;   // 25% of original  
-double kD = 0;   // 50% of original
+// double kP = 0.007;   // 50% of original
+// double kI = 0.002;   // 25% of original  
+// double kD = 0.004;   // 50% of original
 
-double target = 90; //REPLACE 100 WITH MIDPOINT
+double kP = 0.00025; //these might have been scaled down by a factor of 10 somewhere so if it's super slow that's why
+double kI = 0.000048; 
+double kD = 0.00025; 
+
+double target = 80; //REPLACE 100 WITH MIDPOINT
 double totalError, previousError, changeError, PIDOut = 0;
 
 unsigned int lastTime = 0;
@@ -144,7 +148,7 @@ void loop() {
     sensor.VL53L4CD_ClearInterrupt();
 
     // Extract distance and status
-    distance_mm = results.distance_mm;
+    distance_mm = results.distance_mm + 1;
     range_status = results.range_status;
 
     // Print results
@@ -166,7 +170,7 @@ void loop() {
     double e = target - distance_mm;
     totalError += (e * dt);
     changeError = (e - previousError) / dt;
-    PIDOut = (kP * e) + (kI * totalError) + (kD * changeError);
+    PIDOut = 0.8 * ((kP * e) + (kI * totalError) + (kD * changeError));
     
     if (PIDOut > 0) {
       stepper.disableInverseMotorDirection();
