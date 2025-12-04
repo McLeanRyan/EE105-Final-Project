@@ -33,20 +33,20 @@ VL53L4CD sensor(&Wire, A1);  // A1 is a dummy pin, sensor uses default I2C addre
 // Global variables
 uint16_t distance_mm = 0;
 uint8_t range_status = 0;
+// uint16_t distance_mm2 = 0;
+// uint8_t range_status2 = 0;
 VL53L4CD_Result_t results;
 
 TMC2209 stepper;
 SoftwareSerial TMCSerial(PA10, PA9);  // RX, TX
 
-// double kP = 0.007;   // 50% of original
-// double kI = 0.002;   // 25% of original  
-// double kD = 0.004;   // 50% of original
+double kP = 0.00049; //0.0008; //these might have been scaled down by a factor of 10 somewhere so if it's super slow that's why
+double kI = 0.000002; 
+double kD = 0.0024; //0.0025; 
 
-double kP = 0.00025; //these might have been scaled down by a factor of 10 somewhere so if it's super slow that's why
-double kI = 0.000048; 
-double kD = 0.00025; 
-
-double target = 80; //REPLACE 100 WITH MIDPOINT
+double target = 120; //REPLACE 100 WITH MIDPOINT
+double minDist = 50;
+double maxDist = 150;
 double totalError, previousError, changeError, PIDOut = 0;
 
 unsigned int lastTime = 0;
@@ -68,6 +68,10 @@ void setup() {
   // stepper.enableAutomaticGradientAdaptation();
   stepper.enableCoolStep();
   stepper.enable();
+
+  Serial.begin(115200);
+  delay(300);
+  Serial.println("time_ms,distance_mm,PIDOut,error");
 
   // Initialize GPIO pins for TMC2209
   // pinMode(STEP_PIN, OUTPUT);
@@ -151,6 +155,17 @@ void loop() {
     distance_mm = results.distance_mm + 1;
     range_status = results.range_status;
 
+    // delay(50);
+    // // Get measurement results
+    // sensor.VL53L4CD_GetResult(&results);
+
+    // // Clear interrupt to allow next measurement
+    // sensor.VL53L4CD_ClearInterrupt();
+
+    // // Extract distance and status
+    // distance_mm2 = results.distance_mm + 1;
+    // range_status2 = results.range_status;
+
     // Print results
     // Serial.print("Distance: ");
     // Serial.print(distance_mm);
@@ -168,10 +183,25 @@ void loop() {
     if (dt <= 0) return;  // Guard against zero/negative dt
 
     double e = target - distance_mm;
+    //double e = (distance_mm2 - distance_mm) / 0.05;
     totalError += (e * dt);
-    changeError = (e - previousError) / dt;
-    PIDOut = 0.8 * ((kP * e) + (kI * totalError) + (kD * changeError));
+    changeError = (e - previousError) / dt;    
     
+    // if (e = 0 && distance_mm2 < minDist) {
+    //   e = -100;
+    // } else if (e = 0 && distance_mm2 > maxDist) {
+    //   e = 100;
+    // }
+    PIDOut = 0.8 * ((kP * e) + (kI * totalError) + (kD * changeError));
+
+    Serial.print(now);
+    Serial.print(",");
+    Serial.print(distance_mm);
+    Serial.print(",");
+    Serial.print(PIDOut, 6);
+    Serial.print(",");
+    Serial.println(e);  
+
     if (PIDOut > 0) {
       stepper.disableInverseMotorDirection();
       stepper.moveAtVelocity(20000*abs(PIDOut));
