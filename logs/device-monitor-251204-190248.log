@@ -1,0 +1,15 @@
+Driver enabled. Microsteps: 16
+Using software stepperService() for stepping via SysTick
+Stepping will run independently every 2 ms (SYSTICK_DIVIDER=2)
+Setup complete.
+time_ms,distance_mm,PIDOut,error
+Driver will be enabled in 2000 ms if position is at mechanical zero...
+Driver enabled. Microsteps: 16
+Using software stepperService() for stepping via SysTick
+Stepping will run independently every 2 ms (SYSTICK_DIVIDER=2)
+Setup complete.
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees

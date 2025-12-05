@@ -1,0 +1,54 @@
+Driver enabled. Microsteps: 16
+Warning: TIM2 ISR did not run. Enabling software stepper fallback.
+TMC communicating: 1
+TMC hardwareDisabled (library view): 0
+ENABLE pin read: 0
+Microsteps (library): 16
+GlobalStatus - reset:1 drv_err:0
+Setup complete.
+CMD: target -> 45 degrees
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+STATUS: currentSteps=400, targetSteps=400
+, ISRcount=0
+STATUS: currentSteps=400, targetSteps=400
+, ISRcount=0
+STATUS: currentSteps=400, targetSteps=400
+, ISRcount=0
+STATUS: currentSteps=400, targetSteps=400
+, ISRcount=0
+STATUS: currentSteps=400, targetSteps=400
+, ISRcount=0
+STATUS: currentSteps=400, targetSteps=400
+, ISRcount=0
+STATUS: currentSteps=400, targetSteps=400
+, ISRcount=0
+STATUS: currentSteps=400, targetSteps=400
+, ISRcount=0
+STATUS: currentSteps=400, targetSteps=400
+, ISRcount=0
+STATUS: currentSteps=400, targetSteps=400
+, ISRcount=0
+STATUS: currentSteps=400, targetSteps=400
+, ISRcount=0

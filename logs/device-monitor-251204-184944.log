@@ -1,0 +1,542 @@
+Driver enabled. Microsteps: 16
+Warning: TIM2 ISR did not run. Enabling software stepper fallback.
+TMC communicating: 1
+TMC hardwareDisabled (library view): 0
+ENABLE pin read: 0
+Microsteps (library): 16
+GlobalStatus - reset:1 drv_err:0
+Setup complete.
+STATUS: currentSteps=0, targetSteps=0
+, ISRcount=0
+ISR count: 0
+ISR count: 0
+ISR count: 0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+CMD: target -> 45 degrees
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+CMD: target -> 45 degrees
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+Manual step, now currentSteps=401
+Manual step, now currentSteps=400
+Manual step, now currentSteps=401
+CMD: target -> 0 degrees
+Manual step, now currentSteps=3
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+time_ms,distance_mm,PIDOut,error
+Driver will be enabled in 2000 ms if position is at mechanical zero...
+Driver enabled. Microsteps: 16
+Warning: TIM2 ISR did not run. Enabling software stepper fallback.
+TMC communicating: 1
+TMC hardwareDisabled (library view): 0
+ENABLE pin read: 0
+Microsteps (library): 16
+GlobalStatus - reset:1 drv_err:0
+Setup complete.
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+Manual step, now currentSteps=0
+Manual step, now currentSteps=1
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+time_ms,distance_mm,PIDOut,error
+Driver will be enabled in 2000 ms if position is at mechanical zero...
+Driver enabled. Microsteps: 16
+Warning: TIM2 ISR did not run. Enabling software stepper fallback.
+TMC communicating: 1
+TMC hardwareDisabled (library view): 0
+ENABLE pin read: 0
+Microsteps (library): 16
+GlobalStatus - reset:1 drv_err:0
+Setup complete.
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+Unknown command: q
+Commands: 0=0deg,1=45deg,+/-=±1deg,h=home,s=status
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees

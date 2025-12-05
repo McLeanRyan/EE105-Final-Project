@@ -1,0 +1,9 @@
+Driver will be enabled in 2000 ms if position is at mechanical zero...
+Driver enabled. Microsteps: 16
+Setup complete.
+CMD: target -> 45 degrees
+time_ms,distance_mm,PIDOut,error
+Driver will be enabled in 2000 ms if position is at mechanical zero...
+Driver enabled. Microsteps: 16
+Setup complete.
+CMD: target -> 45 degrees

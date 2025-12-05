@@ -1,0 +1,15 @@
+time_ms,distance_mm,PIDOut,error
+Driver will be enabled in 2000 ms if position is at mechanical zero...
+Driver enabled. Microsteps: 16
+Warning: TIM2 ISR did not run. Enabling software stepper fallback.
+Setup complete.
+ISR count: 0
+ISR count: 0
+ISR count: 0
+ISR count: 0
+ISR count: 0
+ISR count: 0
+ISR count: 0
+ISR count: 0
+ISR count: 0
+ISR count: 0

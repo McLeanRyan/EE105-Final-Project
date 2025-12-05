@@ -1,0 +1,32 @@
+time_ms,distance_mm,PIDOut,error
+Driver will be enabled in 2000 ms if position is at mechanical zero...
+Driver enabled. Microsteps: 16
+TIM6 initialized at 10 kHz via HardwareTimer
+Stepping running asynchronously at 10 kHz (100 µs intervals)
+Setup complete.
+Unknown command: q
+Commands: 0=0deg,1=45deg,+/-=±1deg,h=home,s=status
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
+Unknown command: q
+Commands: 0=0deg,1=45deg,+/-=±1deg,h=home,s=status
+CMD: target -> 45 degrees
+CMD: target -> 0 degrees
